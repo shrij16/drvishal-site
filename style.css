@@ -1,208 +1,2333 @@
-/* ===============================
-   ROOT & GLOBAL
+===============================
+
+   ROOT COLOR PALETTE (MEDICAL)
+
 ================================ */
+
 :root {
-  --blue-primary: #1f4fa3;
-  --blue-light: #eef5ff;
-  --green-whatsapp: #25d366;
-  --text-dark: #2c3e50;
+
+  --blue-primary: #2f6fb2;
+
+  --blue-soft: #eaf4fb;
+
+  --blue-light: #cfe9f7;
+
+  --green-action: #25d366;
+
+  --text-dark: #1f2f3a;
+
   --text-muted: #5c6f82;
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  --card-bg: #ffffff;
+
+  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.08);
+
 }
+
+
+
+/* ===============================
+
+   GLOBAL STYLES
+
+================================ */
 
 * {
+
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont;
+
 }
+
+
 
 body {
+
   background: #f7fbff;
+
   color: var(--text-dark);
+
   line-height: 1.6;
+
 }
+
+
 
 /* ===============================
-   HEADER & NAVBAR
+
+   HERO SECTION
+
 ================================ */
-.main-header {
-  background: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
 
-.header-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo a {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--blue-primary);
-  text-decoration: none;
-}
-
-.nav-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.nav-links a.active {
-  color: var(--blue-primary);
-  border-bottom: 2px solid var(--blue-primary);
-}
-
-.call-btn {
-  background: var(--blue-primary);
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* ===============================
-   HERO SECTION (RESPONSIVE)
-================================ */
 .hero {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  padding: 60px 10%;
-  background: linear-gradient(to right, #eef5ff 50%, #ffffff 100%);
+
   position: relative;
+
+  min-height: 90vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 80px;
+
+  overflow: hidden;
+
 }
 
-/* Desktop Image */
-.hero::after {
+
+
+/* LEFT-SIDE GRADIENT ONLY */
+
+.hero::before {
+
   content: "";
+
   position: absolute;
-  right: 5%;
-  width: 40%;
-  height: 80%;
-  background: url("home-bg.png") no-repeat center;
-  background-size: contain;
+
+  inset: 0;
+
+  background: linear-gradient(
+
+    to right,
+
+    rgba(234, 244, 251, 0.98) 0%,
+
+    rgba(234, 244, 251, 0.9) 45%,
+
+    rgba(234, 244, 251, 0.4) 65%,
+
+    rgba(234, 244, 251, 0) 80%
+
+  );
+
   z-index: 1;
+
 }
+
+
+
+/* DOCTOR IMAGE – SHARP & CLEAR */
+
+.hero::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: url("home-bg.png") no-repeat right center;
+
+  background-size: auto 90%;
+
+  z-index: 0;
+
+}
+
+
+
+/* HERO CONTENT */
 
 .hero-content {
-  max-width: 600px;
+
   position: relative;
+
   z-index: 2;
+
+  max-width: 650px;
+
 }
+
+
 
 .hero-content h1 {
-  font-size: 3.2rem;
+
+  font-size: 3rem;
+
   color: var(--blue-primary);
-  line-height: 1.1;
+
+  margin-bottom: 10px;
+
 }
+
+
 
 .hero-content h3 {
-  color: #5d8bd8;
-  margin: 15px 0;
-  font-size: 1.4rem;
+
+  font-size: 1.2rem;
+
+  font-weight: 600;
+
+  color: #5b8fd1;
+
+  margin-bottom: 20px;
+
 }
+
+
+
+.hero-content p {
+
+  font-size: 1.1rem;
+
+  color: var(--text-muted);
+
+  margin-bottom: 30px;
+
+}
+
+
+
+/* HERO BUTTONS */
 
 .hero-buttons {
+
   display: flex;
-  gap: 15px;
-  margin-top: 30px;
+
+  gap: 16px;
+
 }
+
+
 
 .btn {
+
   padding: 14px 28px;
+
   border-radius: 30px;
-  text-decoration: none;
+
   font-weight: 600;
-  transition: 0.3s;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+
 }
 
-.btn-call { background: var(--blue-primary); color: white; }
-.btn-whatsapp { background: var(--green-whatsapp); color: white; }
+
+
+.btn.call {
+
+  background: var(--blue-primary);
+
+  color: white;
+
+}
+
+
+
+.btn.call:hover {
+
+  background: #245a94;
+
+}
+
+
+
+.btn.whatsapp {
+
+  background: var(--green-action);
+
+  color: white;
+
+}
+
+
+
+.btn.whatsapp:hover {
+
+  background: #1ebc5c;
+
+}
+
+
 
 /* ===============================
-   ENT ROOM & HOSPITALS
+
+   ENT ROOM SECTION
+
 ================================ */
-.ent-room-section {
-  padding: 80px 10%;
-  background: #fff;
+
+.ent-room {
+
+  background: #f5f9fc;
+
+  padding: 80px;
+
 }
+
+
 
 .ent-room-wrapper {
+
   display: flex;
-  gap: 50px;
+
   align-items: center;
-  max-width: 1100px;
+
+  gap: 60px;
+
+  max-width: 1200px;
+
   margin: auto;
+
 }
 
-.ent-room-card img {
-  width: 100%;
-  max-width: 450px;
+
+
+.ent-room img {
+
+  width: 420px;
+
+  height: 420px;
+
+  object-fit: cover;
+
   border-radius: 20px;
-  box-shadow: var(--shadow);
+
+  box-shadow: var(--shadow-soft);
+
 }
+
+
+
+.ent-room-content h2 {
+
+  font-size: 2rem;
+
+  color: var(--blue-primary);
+
+  margin-bottom: 16px;
+
+}
+
+
+
+.ent-room-content p {
+
+  font-size: 1.05rem;
+
+  color: var(--text-muted);
+
+}
+
+
+
+/* ===============================
+
+   HOSPITAL AVAILABILITY
+
+================================ */
 
 .hospital-availability {
-  padding: 80px 10%;
+
+  padding: 80px;
+
+  background: #ffffff;
+
 }
+
+
+
+.hospital-availability h2 {
+
+  font-size: 2rem;
+
+  margin-bottom: 40px;
+
+  color: var(--blue-primary);
+
+}
+
+
+
+/* HOSPITAL LIST */
 
 .hospital-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+
 }
+
+
+
+/* HOSPITAL ITEM */
 
 .hospital-item {
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
+
   display: flex;
+
   align-items: center;
-  gap: 20px;
-  box-shadow: var(--shadow);
+
+  gap: 30px;
+
+  background: var(--card-bg);
+
+  padding: 24px;
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow-soft);
+
 }
 
+
+
 .hospital-item img {
-  width: 100px;
-  height: 80px;
+
+  width: 220px;
+
+  height: 150px;
+
   object-fit: cover;
+
+  border-radius: 14px;
+
+}
+
+
+
+.hospital-info h3 {
+
+  font-size: 1.4rem;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+.hospital-info p {
+
+  color: var(--text-muted);
+
+  margin-bottom: 10px;
+
+}
+
+
+
+.hospital-info a {
+
+  color: var(--blue-primary);
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+}
+
+
+
+.hospital-info a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
+/* ===============================
+
+   RESPONSIVE
+
+================================ */
+
+@media (max-width: 1024px) {
+
+  .hero {
+
+    padding: 60px;
+
+  }
+
+
+
+  .hero::after {
+
+    background-size: auto 80%;
+
+  }
+
+
+
+  .ent-room-wrapper {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+}
+
+
+
+@media (max-width: 768px) 
+
+{
+
+  .hero {
+
+    min-height: auto;
+
+    padding: 60px 30px;
+
+  }
+
+
+
+  .hero::after {
+
+    opacity: 0.25;
+
+    background-position: center;
+
+  }
+
+
+
+  .hero-content h1 {
+
+    font-size: 2.2rem;
+
+  }
+
+
+
+  .hospital-item {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+
+
+  .hospital-item img {
+
+    width: 100%;
+
+    height: 200px;
+
+  }
+
+}
+
+font-weight: 600;
+
+/* ===============================
+
+   ENT ROOM SECTION
+
+================================ */
+
+.ent-room-section {
+
+  padding: 80px 8%;
+
+  background: #f8fbff;
+
+}
+
+
+
+.ent-room-wrapper {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 60px;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+}
+
+
+
+/* Image Card */
+
+.ent-room-card {
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  width: 420px;
+
+  flex-shrink: 0;
+
+}
+
+
+
+.ent-room-card img {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+}
+
+
+
+/* Text */
+
+.ent-room-text h2 {
+
+  font-size: 32px;
+
+  color: #123a5f;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.ent-room-text p {
+
+  font-size: 16.5px;
+
+  line-height: 1.7;
+
+  color: #445a6f;
+
+  margin-bottom: 14px;
+
+}
+
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+  .ent-room-wrapper {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .ent-room-card {
+
+    width: 100%;
+
+    max-width: 480px;
+
+  }
+
+}
+
+
+
+
+
+
+
+.btn-call {
+
+  padding: 12px 26px;
+
+  background: #2f6db5;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+
+  transition: background 0.3s ease;
+
+}
+
+
+
+.btn-call:hover {
+
+  background: #245a96;
+
+}
+
+
+
+.btn-whatsapp {
+
+  padding: 12px 28px;
+
+  background: #25d366;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+
+  transition: background 0.3s ease;
+
+}
+
+
+
+.btn-whatsapp:hover {
+
+  background: #1ebe5d;
+
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .ent-room-container {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+
+
+  .ent-room-image img {
+
+    max-width: 100%;
+
+  }
+
+
+
+  .ent-room-buttons {
+
+    justify-content: center;
+
+  }
+
+}
+
+.navbar {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+}
+
+
+
+.nav-container {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 14px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+
+.logo {
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #1e4fa1;
+
+}
+
+
+
+.nav-links a {
+
+  margin: 0 14px;
+
+  text-decoration: none;
+
+  color: #333;
+
+  font-weight: 500;
+
+}
+
+
+
+.nav-links a.active,
+
+.nav-links a:hover {
+
+  color: #1e4fa1;
+
+}
+
+
+
+.nav-cta {
+
+  background: #1e4fa1;
+
+  color: #fff;
+
+  padding: 10px 18px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+.page-header {
+
+  background: linear-gradient(135deg, #e8f1ff, #f6fbff);
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+}
+
+
+
+.page-header h1 {
+
+  color: #1e4fa1;
+
+  font-size: 36px;
+
+}
+
+
+
+.about-section {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 32px;          /* ⬅ reduce from 60px or more */
+
+  padding: 80px 10%;
+
+}
+
+.about-image img {
+
+  width: 360px;
+
+  max-width: 100%;
+
+  border-radius: 20px;
+
+}
+
+
+
+
+
+
+
+.about-grid {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.2fr;
+
+  gap: 40px;
+
+  align-items: center;
+
+}
+
+
+
+
+
+
+
+.about-content h2 {
+
+  color: #1e4fa1;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.about-content ul {
+
+  margin-top: 15px;
+
+  padding-left: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", sans-serif;
+
+}
+
+
+
+body {
+
+  background: #f4f9ff;
+
+  color: #2c3e50;
+
+}
+
+
+
+/* ===== NAVBAR ===== */
+
+header {
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+}
+
+
+
+.navbar {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 15px 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+
+
+.navbar h2 {
+
+  color: #1e4fa1;
+
+}
+
+
+
+.nav-links a {
+
+  margin: 0 15px;
+
+  text-decoration: none;
+
+  color: #1e4fa1;
+
+  font-weight: 600;
+
+}
+
+
+
+.nav-links a.active {
+
+  border-bottom: 3px solid #1e4fa1;
+
+}
+
+
+
+.call-btn {
+
+  background: #1e4fa1;
+
+  color: white;
+
+  padding: 10px 20px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+
+
+/* ===== HERO ===== */
+
+.hero {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 80px 10%;
+
+  background: linear-gradient(to right, #eef6ff, #ffffff);
+
+}
+
+
+
+.hero-text {
+
+  max-width: 600px;
+
+}
+
+
+
+.hero-text h1 {
+
+  font-size: 48px;
+
+  color: #1e4fa1;
+
+}
+
+
+
+.hero-text h3 {
+
+  margin: 15px 0;
+
+  color: #5d8bd8;
+
+}
+
+
+
+.hero-text p {
+
+  margin: 20px 0;
+
+  line-height: 1.7;
+
+}
+
+
+
+.hero-buttons a {
+
+  display: inline-block;
+
+  margin-right: 15px;
+
+  padding: 14px 30px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+
+
+.btn-call {
+
+  background: #1e4fa1;
+
+  color: white;
+
+}
+
+
+
+.btn-whatsapp {
+
+  background: #25d366;
+
+  color: white;
+
+}
+
+
+
+.hero-image img {
+
+  max-width: 420px;
+
+}
+
+
+
+/* ===== SECTIONS ===== */
+
+.section {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 80px 20px;
+
+}
+
+
+
+.section h2 {
+
+  font-size: 36px;
+
+  margin-bottom: 25px;
+
+  color: #1e4fa1;
+
+}
+
+
+
+.section h3 {
+
+  margin-top: 25px;
+
+  color: #355fa8;
+
+}
+
+
+
+.section p {
+
+  max-width: 900px;
+
+  line-height: 1.8;
+
+  margin-top: 10px;
+
+}
+
+.navbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 16px 40px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+}
+
+
+
+/* Left */
+
+.nav-left {
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #1f4fa3;
+
+}
+
+
+
+/* Center */
+
+.nav-center {
+
+  display: flex;
+
+  gap: 30px;
+
+}
+
+
+
+.nav-center a {
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  color: #333;
+
+  font-weight: 500;
+
+}
+
+
+
+.nav-center a:hover,
+
+.nav-center a.active {
+
+  color: #1f4fa3;
+
+  border-bottom: 2px solid #1f4fa3;
+
+  padding-bottom: 4px;
+
+}
+
+
+
+/* Right */
+
+.call-btn {
+
+  background: #1f4fa3;
+
+  color: #fff;
+
+  padding: 10px 22px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+
+
+.call-btn:hover {
+
+  background: #163c7a;
+
+}
+
+.main-header {
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+}
+
+
+
+.header-container {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 18px 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+
+.logo a {
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #1f4fa3;
+
+  text-decoration: none;
+
+}
+
+
+
+.nav-links {
+
+  display: flex;
+
+  gap: 30px;
+
+}
+
+
+
+.nav-links a {
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  color: #333;
+
+  padding-bottom: 4px;
+
+}
+
+
+
+.nav-links a.active {
+
+  color: #1f4fa3;
+
+  border-bottom: 2px solid #1f4fa3;
+
+  font-weight: 600;
+
+}
+
+
+
+.header-action .call-btn {
+
+  background: #1f4fa3;
+
+  color: #fff;
+
+  padding: 10px 20px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+.page-hero {
+
+  background: #eef5ff;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+}
+
+
+
+.page-hero h1 {
+
+  color: #1f4fa3;
+
+  font-size: 36px;
+
+}
+
+
+
+.surgery-section {
+
+  padding: 60px 40px;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+}
+
+
+
+.light-bg {
+
+  background: #f7fbff;
+
+}
+
+
+
+.surgery-section h2 {
+
+  color: #1f4fa3;
+
+  margin-bottom: 30px;
+
+}
+
+
+
+.surgery-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 25px;
+
+}
+
+
+
+.surgery-card {
+
+  background: #fff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  padding: 20px;
+
+  text-align: center;
+
+}
+
+
+
+.surgery-card img {
+
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+
   border-radius: 10px;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.care-section {
+
+  background: #eef5ff;
+
+  padding: 60px 40px;
+
+}
+
+
+
+.care-grid {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+
+}
+
+
+
+.care-box {
+
+  background: #fff;
+
+  padding: 30px;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+.care-box h3 {
+
+  color: #1f4fa3;
+
+  margin-bottom: 15px;
+
+}
+
+.about-deep,
+
+.about-block {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 70px 10%;
+
+}
+
+
+
+.about-block h3 {
+
+  color: #1f4fa3;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.about-lead {
+
+  font-size: 18px;
+
+  color: #5c6f82;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.two-column {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 40px;
+
+}
+
+
+
+.expertise-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 30px;
+
+}
+
+
+
+.expertise-card {
+
+  background: #fff;
+
+  padding: 25px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.light-bg {
+
+  background: #f7fbff;
+
+}
+
+/* ===== ABOUT PAGE HERO ===== */
+
+.about-page-hero {
+
+  padding: 100px 12%;
+
+  background: linear-gradient(135deg, #eaf4fb, #f7fbff);
+
+  text-align: center;
+
+}
+
+
+
+.about-page-hero h1 {
+
+  font-size: 48px;
+
+  color: #1f4fa3;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.about-page-hero p {
+
+  font-size: 20px;
+
+  color: #5c6f82;
+
+  max-width: 900px;
+
+  margin: auto;
+
+}
+
+
+
+/* ===== ZIGZAG LAYOUT ===== */
+
+.zigzag-section {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 100px 10%;
+
+  background: #ffffff;
+
+}
+
+
+
+.zigzag-section.reverse {
+
+  flex-direction: row-reverse;
+
+  background: #f7fbff;
+
+}
+
+
+
+.zigzag-text {
+
+  flex: 1;
+
+}
+
+
+
+.zigzag-text h2 {
+
+  font-size: 34px;
+
+  color: #1f4fa3;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.zigzag-text p {
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: #445a6f;
+
+  margin-bottom: 16px;
+
+}
+
+
+
+.zigzag-text ul {
+
+  margin: 15px 0 15px 20px;
+
+}
+
+
+
+.zigzag-text li {
+
+  margin-bottom: 8px;
+
+  color: #2c3e50;
+
+}
+
+
+
+.zigzag-image {
+
+  flex: 1;
+
+}
+
+
+
+.zigzag-image img {
+
+  width: 100%;
+
+  max-width: 480px;
+
+  border-radius: 22px;
+
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+
+  .zigzag-section,
+
+  .zigzag-section.reverse {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+
+
+  .zigzag-text ul {
+
+    text-align: left;
+
+  }
+
+}
+
+/* ===== EXPANDABLE SURGERY CARDS ===== */
+
+
+
+.expandable {
+
+  position: relative;
+
+}
+
+
+
+.toggle-btn {
+
+  margin-top: 10px;
+
+  background: transparent;
+
+  border: none;
+
+  color: #1f4fa3;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+
+
+.expand-content {
+
+  display: none;
+
+  margin-top: 20px;
+
+  text-align: left;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+}
+
+
+
+.expand-content h4 {
+
+  color: #1f4fa3;
+
+  margin-top: 18px;
+
+}
+
+
+
+.expand-content ul {
+
+  padding-left: 18px;
+
+  margin-top: 8px;
+
+}
+
+
+
+.expand-content ul li {
+
+  margin-bottom: 6px;
+
+}
+
+
+
+.recovery {
+
+  margin-top: 12px;
+
+  font-weight: 600;
+
+  color: #2c3e50;
+
+}
+
+
+
+/* Active state */
+
+.expandable.active .expand-content {
+
+  display: block;
+
+}
+
+.surgery-details {
+
+  display: none;
+
+  margin-top: 15px;
+
+  text-align: left;
+
+}
+
+
+
+.surgery-card.active .surgery-details {
+
+  display: block;
+
+}
+
+
+
+.toggle-btn {
+
+  color: #1f4fa3;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+.surgery-grid {
+
+  align-items: start;
+
 }
 
 /* ===============================
-   MOBILE MEDIA QUERIES
+
+   PRE & POST OP CARE – PREMIUM UI
+
 ================================ */
+
+
+
+.care-master-section {
+
+  padding: 90px 8%;
+
+  background: linear-gradient(180deg, #f4f9ff, #ffffff);
+
+}
+
+
+
+/* HERO */
+
+.care-hero {
+
+  max-width: 900px;
+
+  margin-bottom: 60px;
+
+}
+
+
+
+.care-hero h2 {
+
+  font-size: 38px;
+
+  color: #1f4fa3;
+
+  margin-bottom: 14px;
+
+}
+
+
+
+.care-hero p {
+
+  font-size: 17px;
+
+  color: #556b85;
+
+  line-height: 1.8;
+
+}
+
+
+
+/* BLOCK */
+
+.care-block {
+
+  margin-bottom: 80px;
+
+}
+
+
+
+.care-block h3 {
+
+  font-size: 30px;
+
+  color: #123a5f;
+
+  margin-bottom: 35px;
+
+  position: relative;
+
+}
+
+
+
+.care-block h3::after {
+
+  content: "";
+
+  width: 80px;
+
+  height: 4px;
+
+  background: #1f4fa3;
+
+  display: block;
+
+  margin-top: 10px;
+
+  border-radius: 10px;
+
+}
+
+
+
+/* GRID */
+
+.care-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 30px;
+
+}
+
+
+
+/* CARD */
+
+.care-card {
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 28px 26px;
+
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+.care-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 28px 55px rgba(0,0,0,0.12);
+
+}
+
+
+
+.care-card h4 {
+
+  font-size: 20px;
+
+  color: #1f4fa3;
+
+  margin-bottom: 14px;
+
+}
+
+
+
+.care-card ul {
+
+  padding-left: 18px;
+
+}
+
+
+
+.care-card li {
+
+  font-size: 15.5px;
+
+  color: #4b5f75;
+
+  margin-bottom: 8px;
+
+  line-height: 1.6;
+
+}
+
+
+
+/* HIGHLIGHT CARD */
+
+.care-card.highlight {
+
+  background: linear-gradient(135deg, #1f4fa3, #3f74d8);
+
+  color: #ffffff;
+
+}
+
+
+
+.care-card.highlight h4,
+
+.care-card.highlight li {
+
+  color: #ffffff;
+
+}
+
+
+
+/* LIGHT BG SECTION */
+
+.care-block.light-bg {
+
+  background: #f0f6ff;
+
+  padding: 60px;
+
+  border-radius: 30px;
+
+}
+
+
+
+/* ALERT */
+
+.care-alert {
+
+  background: #fff3f3;
+
+  border-left: 6px solid #d93025;
+
+  padding: 35px 40px;
+
+  border-radius: 20px;
+
+}
+
+
+
+.care-alert h3 {
+
+  color: #d93025;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.care-alert ul {
+
+  padding-left: 20px;
+
+}
+
+
+
+.care-alert li {
+
+  color: #5f2a2a;
+
+  font-size: 16px;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+/* RESPONSIVE */
+
 @media (max-width: 768px) {
-  /* Navbar */
-  .header-container { flex-direction: column; gap: 15px; }
-  .nav-links { margin-bottom: 10px; }
 
-  /* Hero */
-  .hero { 
-    text-align: center; 
-    padding: 40px 20px; 
-    min-height: auto;
-    background: #eef5ff; 
+  .care-hero h2 {
+
+    font-size: 30px;
+
   }
-  .hero::after { display: none; } /* Hide bg image on mobile for clarity */
-  .hero-content h1 { font-size: 2.2rem; }
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .btn { width: 100%; text-align: center; }
 
-  /* Sections */
-  .ent-room-wrapper { flex-direction: column; text-align: center; }
-  .hospital-item { flex-direction: column; text-align: center; }
-  .hospital-item img { width: 100%; height: 180px; }
+
+
+  .care-block h3 {
+
+    font-size: 24px;
+
+  }
+
+
+
+  .care-block.light-bg {
+
+    padding: 40px 20px;
+
+  }
+
+}
+
+/* FORCE HIGHLIGHT CARD TO WHITE */
+
+.care-card.highlight {
+
+  background: #ffffff !important;
+
+  color: #4b5f75 !important;
+
+}
+
+
+
+.care-card.highlight h4,
+
+.care-card.highlight li {
+
+  color: #1f4fa3 !important;
+
+}
+
+/* ===============================
+
+   SURGERY CARD – UNIFORM SIZE
+
+================================ */
+
+
+
+.surgery-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 28px;
+
+  align-items: stretch; /* KEY */
+
+}
+
+
+
+.surgery-card {
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  padding: 26px 22px;
+
+  display: flex;                /* KEY */
+
+  flex-direction: column;       /* KEY */
+
+  justify-content: space-between; /* KEY */
+
+  height: 100%;                 /* KEY */
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+
+
+.surgery-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+}
+
+
+
+/* Image/Icon at top */
+
+.surgery-card img {
+
+  width: 100%;
+
+  height: 160px;        /* FIXED HEIGHT */
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  margin-bottom: 16px;
+
+}
+
+
+
+/* Headings */
+
+.surgery-card h3 {
+
+  font-size: 18px;
+
+  color: #1f4fa3;
+
+  margin-bottom: 10px;
+
+  min-height: 48px;     /* NORMALISE HEADING HEIGHT */
+
+}
+
+
+
+/* Description */
+
+.surgery-card p {
+
+  font-size: 15px;
+
+  color: #5a6b80;
+
+  line-height: 1.6;
+
+  margin-bottom: 16px;
+
+}
+
+
+
+/* View Details Button */
+
+.surgery-card .toggle-btn {
+
+  margin-top: auto;    /* PUSH TO BOTTOM */
+
+  text-align: center;
+
+  color: #1f4fa3;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+}
+
+
+
+.surgery-card .toggle-btn:hover {
+
+  text-decoration: underline;
+
 }
