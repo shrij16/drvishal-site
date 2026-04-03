@@ -1165,4 +1165,79 @@ header {
 .surgery-card .toggle-btn:hover {
   text-decoration: underline;
 }
+/* ===============================
+   MOBILE NAVIGATION LOGIC
+================================ */
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #1f4fa3;
+  transition: 0.3s;
+}
+
+/* ===============================
+   THE MOBILE FIX (MEDIA QUERY)
+================================ */
+@media (max-width: 768px) {
+  /* Header & Nav */
+  .menu-toggle { display: flex; }
+  .header-action { display: none; } /* Hide the lone button */
+
+  .nav-links {
+    position: absolute;
+    top: 70px; /* Adjust based on header height */
+    left: -100%;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .nav-links.active { left: 0; }
+  .nav-cta-mobile { display: inline-block; color: #1f4fa3; font-weight: 700; }
+
+  /* Hero Section Fix */
+  .hero {
+    padding: 60px 20px !important;
+    text-align: center;
+    min-height: auto;
+  }
+  .hero::after { opacity: 0.15; background-size: contain; } /* Fades doctor image into background */
+  
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Image & Card Fixes (No more overflow!) */
+  .ent-room-wrapper, .hospital-item {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .ent-room-card, .ent-room img, .hospital-item img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Spacing Fixes */
+  .ent-room-section, .hospital-availability {
+    padding: 40px 20px !important;
+  }
+  
+  .hospital-info h3 { font-size: 1.2rem; }
+}
