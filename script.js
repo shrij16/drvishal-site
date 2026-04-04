@@ -13,4 +13,15 @@ document.addEventListener("click", function (e) {
       if (btn) btn.textContent = "View Details";
     }
   });
+// Add this right after the last '});' in your screenshot:
+    
+    // Toggle the clicked card
+    card.classList.toggle("active");
 
+    // Update the button text for the clicked card
+    if (card.classList.contains("active")) {
+      e.target.textContent = "Hide Details";
+    } else {
+      e.target.textContent = "View Details";
+    }
+});
