@@ -1,7 +1,5 @@
-===============================
-
+/* ===============================
    ROOT COLOR PALETTE (MEDICAL)
-
 ================================ */
 
 :root {
@@ -523,8 +521,6 @@ body {
   }
 
 }
-
-font-weight: 600;
 
 /* ===============================
 
@@ -2330,4 +2326,270 @@ header {
 
   text-decoration: underline;
 
+}
+
+/* ===============================
+   MOBILE / TABLET FIXES
+   Added to stabilize layout and text scaling on smaller screens.
+================================ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .ent-room-section,
+  .hospital-availability,
+  .surgery-section,
+  .care-section,
+  .zigzag-section,
+  .zigzag-section.reverse,
+  .about-section {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .header-container {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .navbar {
+    padding: 14px 20px;
+    gap: 16px;
+  }
+
+  .nav-center {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header,
+  .navbar,
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo a {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  .header-action {
+    order: 2;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-left {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .nav-center {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+  }
+
+  .nav-center a,
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .nav-right,
+  .header-action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .call-btn {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    text-align: left;
+  }
+
+  .hero::before {
+    background: linear-gradient(
+      to right,
+      rgba(234, 244, 251, 0.96) 0%,
+      rgba(234, 244, 251, 0.93) 58%,
+      rgba(234, 244, 251, 0.62) 76%,
+      rgba(234, 244, 251, 0.25) 100%
+    );
+  }
+
+  .hero::after {
+    background-position: right -40px center;
+    background-size: auto 100%;
+    opacity: 0.62;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+    line-height: 1.2;
+  }
+
+  .hero-content h3 {
+    font-size: clamp(1rem, 4.2vw, 1.2rem);
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn,
+  .hero-buttons .btn-call,
+  .hero-buttons .btn-whatsapp {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ent-room-wrapper,
+  .about-section,
+  .zigzag-section,
+  .zigzag-section.reverse,
+  .hospital-item {
+    flex-direction: column;
+    text-align: left;
+    gap: 24px;
+  }
+
+  .ent-room-text h2,
+  .page-header h1,
+  .page-hero h1 {
+    font-size: clamp(1.7rem, 6.5vw, 2.1rem);
+  }
+
+  .zigzag-text h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .zigzag-text p,
+  .about-content p,
+  .surgery-card p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .hospital-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hospital-availability,
+  .surgery-section,
+  .care-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .surgery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .surgery-card h3 {
+    min-height: 0;
+  }
+
+  .care-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero,
+  .ent-room-section,
+  .hospital-availability,
+  .surgery-section,
+  .care-section,
+  .zigzag-section,
+  .zigzag-section.reverse,
+  .about-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .logo a,
+  .nav-left {
+    font-size: 17px;
+  }
+
+  .nav-center a,
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .page-header,
+  .page-hero {
+    padding: 44px 18px;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .hero::after {
+    background-position: right -75px center;
+    background-size: auto 96%;
+    opacity: 0.56;
+  }
 }
